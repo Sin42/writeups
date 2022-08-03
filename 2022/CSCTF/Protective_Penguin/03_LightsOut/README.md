@@ -23,8 +23,10 @@ drwxr-xr-x adversaryquest/adversaryquest 0 2022-06-16 03:00 LightsOut/
 
 $ file *
 Font-Unix: data
-i:         ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, missing section headers
-lds:       ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, BuildID[sha1]=149cba1150c097a6784e9f32bf7954f9109d75ba, for GNU/Linux 3.2.0, not stripped
+i:         ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV),
+           dynamically linked, interpreter /lib/ld-linux-armhf.so.3, missing section headers
+lds:       ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV),
+           dynamically linked, interpreter /lib/ld-linux-armhf.so.3, BuildID[sha1]=149cba1150c097a6784e9f32bf7954f9109d75ba, for GNU/Linux 3.2.0, not stripped
 ```
 
 
@@ -329,7 +331,7 @@ I assume this is some sort of limitation in IDA treating the `IT HI` instruction
 
 ## Decryption
 
-At this point it is perfectly clear how the encryption takes place. Even though it's straightforward to reverse it at this point, we can simply perform a full search for every byte.
+At this point it is perfectly clear how the encryption takes place. The input bytes influence the output bytes in order. So, even though it's straightforward to reverse the algorithm at this point, there is no need as we can simply perform a full search for every byte. 
 
 
 ```python
